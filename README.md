@@ -3,5 +3,5 @@
 ## How to run unit tests?
 
 ```
-python -m unittest discover test
+python -m unittest discover .
 ```
