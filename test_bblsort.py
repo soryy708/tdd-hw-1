@@ -15,7 +15,7 @@ class TestBblsort(unittest.TestCase):
         result = bblSort(val)
         self.assertNotEqual(result, None) # Check that function does return something
         self.assertEqual(len(val), len(result)) # Check that no elements were lost
-        self.assertTupleEqual(result, (42)) # Check that function returns the correct thing
+        self.assertTupleEqual(result, (42,)) # Check that function returns the correct thing
     
     def test_bblsort_twoElAlreadySorted(self):
         val = (1, 2)
