@@ -66,5 +66,68 @@ class TestBblsort(unittest.TestCase):
         self.assertEqual(len(val), len(result)) # Check that no elements were lost
         self.assertTupleEqual(result, (3, 7, 7, 42, 42)) # Check that function returns the correct thing
 
+    def test_bblsort_stringsempty(self):
+        val = tuple()
+        result = bblSort(val)
+        self.assertNotEqual(result, None) # Check that function does return something
+        self.assertEqual(len(val), len(result)) # Check that no elements were lost
+        self.assertTupleEqual(result, ()) # Check that function returns the correct thing
+    
+    def test_bblsort_stringsoneElement(self):
+        val = ('bob',)
+        result = bblSort(val)
+        self.assertNotEqual(result, None) # Check that function does return something
+        self.assertEqual(len(val), len(result)) # Check that no elements were lost
+        self.assertTupleEqual(result, ('bob',)) # Check that function returns the correct thing
+    
+    def test_bblsort_stringstwoElAlreadySorted(self):
+        val = ('alice', 'bob')
+        result = bblSort(val)
+        self.assertNotEqual(result, None) # Check that function does return something
+        self.assertEqual(len(val), len(result)) # Check that no elements were lost
+        self.assertTupleEqual(result, ('alice', 'bob')) # Check that function returns the correct thing
+    
+    def test_bblSort_stringstwoElNotSorted(self):
+        val = ('bob', 'alice')
+        result = bblSort(val)
+        self.assertNotEqual(result, None) # Check that function does return something
+        self.assertEqual(len(val), len(result)) # Check that no elements were lost
+        self.assertTupleEqual(result, ('alice', 'bob')) # Check that function returns the correct thing
+
+    def test_bblSort_stringsfiveElSorted(self):
+        val = ('alpha', 'bravo', 'charlie', 'delta', 'echo')
+        result = bblSort(val)
+        self.assertNotEqual(result, None) # Check that function does return something
+        self.assertEqual(len(val), len(result)) # Check that no elements were lost
+        self.assertTupleEqual(result, ('alpha', 'bravo', 'charlie', 'delta', 'echo')) # Check that function returns the correct thing
+    
+    def test_bblSort_stringsfiveElReversed(self):
+        val = ('echo', 'delta', 'charlie', 'bravo', 'alpha')
+        result = bblSort(val)
+        self.assertNotEqual(result, None) # Check that function does return something
+        self.assertEqual(len(val), len(result)) # Check that no elements were lost
+        self.assertTupleEqual(result, ('alpha', 'bravo', 'charlie', 'delta', 'echo')) # Check that function returns the correct thing
+
+    def test_bblSort_stringsfiveElUnsorted(self):
+        val = ('charlie', 'alpha', 'bravo', 'echo', 'delta')
+        result = bblSort(val)
+        self.assertNotEqual(result, None) # Check that function does return something
+        self.assertEqual(len(val), len(result)) # Check that no elements were lost
+        self.assertTupleEqual(result, ('alpha', 'bravo', 'charlie', 'delta', 'echo')) # Check that function returns the correct thing
+    
+    def test_bblSort_stringsfiveElAllDupes(self):
+        val = ('echo', 'echo', 'echo', 'echo', 'echo')
+        result = bblSort(val)
+        self.assertNotEqual(result, None) # Check that function does return something
+        self.assertEqual(len(val), len(result)) # Check that no elements were lost
+        self.assertTupleEqual(result, ('echo', 'echo', 'echo', 'echo', 'echo')) # Check that function returns the correct thing
+    
+    def test_bblSort_stringsfiveElDupes(self):
+        val = ('echo', 'charlie', 'echo', 'zulu', 'zulu')
+        result = bblSort(val)
+        self.assertNotEqual(result, None) # Check that function does return something
+        self.assertEqual(len(val), len(result)) # Check that no elements were lost
+        self.assertTupleEqual(result, ('charlie', 'echo', 'echo', 'zulu', 'zulu')) # Check that function returns the correct thing
+
 if __name__ == '__main__':
     unittest.main()
