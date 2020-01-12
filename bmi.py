@@ -9,3 +9,9 @@ def calculateBmi(mass, height):
         raise ValueError('height <= 0')
 
     return mass / (height ** 2)
+
+def getBmiCategory(bmi):
+    """
+        Based on `bmi` number, returns one of: "underweight", "normal", "overweight", "obese"
+    """
+    return ''
